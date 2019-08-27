@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
+import uuid
 from django.db import models, migrations
 
 
@@ -17,7 +18,7 @@ class Migration(migrations.Migration):
                 ('title', models.CharField(verbose_name='Title', max_length=255)),
                 ('module', models.CharField(verbose_name='module', max_length=255)),
                 ('app_label', models.CharField(verbose_name='application name', max_length=255, blank=True, null=True)),
-                ('user', models.PositiveIntegerField(verbose_name='user')),
+                ('user', models.UUIDField(default=uuid.uuid4, verbose_name='user')),
                 ('column', models.PositiveIntegerField(verbose_name='column')),
                 ('order', models.IntegerField(verbose_name='order')),
                 ('settings', models.TextField(verbose_name='settings', blank=True, default='')),
